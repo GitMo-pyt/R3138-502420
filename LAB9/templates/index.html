@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Experience</title>
+    <script type="text/javascript" src="/static/update.js"></script>
+    <link href="static/store.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>My work experience:</h1>
+    <h3>Add new element:</h3>
+    <form>
+        <div>
+            <input type="text" name="company" id="company">
+            <label for="company">Company</label>
+        </div>
+        <div>
+            <input type="number" name="term" id="term">
+            <label for="term">Term</label>
+        </div>
+        <button onClick="addWork()">Add</button>
+    </form>
+    <ul>
+        {% for work in works_list %}
+        <li>
+            <div>
+                <div>{{ work['company'] }}</div>
+                <div>{{ work['term'] }} months</div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
